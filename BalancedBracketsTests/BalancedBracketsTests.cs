@@ -17,7 +17,7 @@ namespace BalancedBracketsTests
         [TestMethod]
         public void OnlyBracketsReturnsTrue()
         {
-            Assert.IsTrue(BalancedBrackets.HasBalancedBrackets("Launch]Code["));
+            Assert.IsTrue(BalancedBrackets.HasBalancedBrackets("[]"));
         }
         [TestMethod]
         public void OnlyBracketsAndEmptyReturnsTrue() //' "" ' condition
@@ -27,18 +27,27 @@ namespace BalancedBracketsTests
         [TestMethod]
         public void OnlyOpeningBracket()
         {
-            Assert.IsTrue(BalancedBrackets.HasBalancedBrackets("[")); //should fail
+            Assert.IsFalse(BalancedBrackets.HasBalancedBrackets("[")); //should fail
         }
         [TestMethod]
         public void OnlyClosingBracket()
         {
-            Assert.IsTrue(BalancedBrackets.HasBalancedBrackets("]")); //should fail
+            Assert.IsFalse(BalancedBrackets.HasBalancedBrackets("]")); //should fail
         }
         [TestMethod]
         public void UnBalancedBracketsReturnFalse()
         {
-            Assert.IsTrue(BalancedBrackets.UnBalancedBracketsHasClosingBracketsFirst("Launch]Code[")); //should fail
+            Assert.IsFalse(BalancedBrackets.HasBalancedBrackets("Launch]Code[")); //should fail
         }
-
+        [TestMethod]
+        public void OneBracketsReturnFalse()
+        {
+            Assert.IsFalse(BalancedBrackets.HasBalancedBrackets("[LaunchCode")); //should fail
+        }
+        [TestMethod]
+        public void UnclosedBracketsReturnFalse()
+        {
+            Assert.IsFalse(BalancedBrackets.HasBalancedBrackets("][")); //should fail
+        }
     }
 }

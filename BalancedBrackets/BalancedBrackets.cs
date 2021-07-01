@@ -47,41 +47,43 @@ namespace BalancedBracketsNS
             }
             return brackets == 0;
         }
-        public static bool UnBalancedBracketsHasClosingBracketsFirst(String str)
-        {
-            int brackets = 0;
-            int i = 0;
-            int indexOpening = i;
-            int indexClosing = i;
-            foreach (char ch in str.ToCharArray())
-            {
-                if(ch == '[')
-                {
-                    indexOpening = i;
-                    brackets++;
-                    i++;
-                }
-                else if(ch == ']')
-                {
-                    indexClosing = i;
-                    brackets--;
-                    i++;
-                }
-                else
-                {
-                    i++;
-                }
 
-                if(indexClosing < indexOpening && brackets == 0)
-                {
-                    return false;
-                }
-                else if(indexOpening < indexClosing && brackets == 0)
-                {
-                    return true;
-                }
-            }
-                return true; //no brackets
-        }
+        //method i made
+       //public static bool UnBalancedBracketsHasClosingBracketsFirst(String str)
+       //{
+       //    int brackets = 0;
+       //    int i = 0;
+       //    int indexOpening = i;
+       //    int indexClosing = i;
+       //    foreach (char ch in str.ToCharArray())
+       //    {
+       //        if(ch == '[')
+       //        {
+       //            indexOpening = i;
+       //            brackets++;
+       //            i++;
+       //        }
+       //        else if(ch == ']')
+       //        {
+       //            indexClosing = i;
+       //            brackets--;
+       //            i++;
+       //        }
+       //        else
+       //        {
+       //            i++;
+       //        }
+       //
+       //        if(indexClosing < indexOpening && brackets == 0)
+       //        {
+       //            return false;
+       //        }
+       //        else if(indexOpening < indexClosing && brackets == 0)
+       //        {
+       //            return true;
+       //        }
+       //    }
+       //        return true; //no brackets
+       //}
     }
 }
