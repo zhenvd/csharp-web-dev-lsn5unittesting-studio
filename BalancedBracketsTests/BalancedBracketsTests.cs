@@ -64,6 +64,15 @@ namespace BalancedBracketsTests
         {
             Assert.IsTrue(BalancedBrackets.HasBalancedBrackets("[[[]]]")); //should pass
         }
-
+        [TestMethod]
+        public void MultipleMultipleUnBalancedReturnTrue()
+        {
+            Assert.IsFalse(BalancedBrackets.HasBalancedBrackets("[[[[]]]")); //should pass
+        }
+        [TestMethod]
+        public void ExcessiveMultipleBalancedReturnTrue()
+        {
+            Assert.IsTrue(BalancedBrackets.HasBalancedBrackets("[L][a][u][n][c][h][][o][d][e]")); //should pass
+        }
     }
 }

@@ -48,7 +48,7 @@ namespace BalancedBracketsNS
             return brackets == 0;
         }
 
-        //method i made
+        //method i made. Does same thing as HasBalancedBrackets method
        //public static bool UnBalancedBracketsHasClosingBracketsFirst(String str)
        //{
        //    int brackets = 0;
